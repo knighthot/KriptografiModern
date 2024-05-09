@@ -1,0 +1,210 @@
+.content-container {
+    display: flex;
+  }
+  
+  .container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center; /* Tombol akan diletakkan di tengah secara horizontal */
+    margin-top: 20px; /* Menambahkan jarak antara card dan tombol */
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1; /* Setiap kolom akan memiliki fleksibilitas yang sama */
+  }
+
+  label {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #7469B6;
+  }
+  
+  .card {
+    background-color: #F3EEFB;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    margin-left: 5vw;
+    width: 70%;
+    display: flex;
+    height: 15vw;
+    flex-direction: column; /* Mengatur orientasi menjadi vertikal */
+    box-shadow: 0px 2px 4px 0px #7469B6; /* Menambahkan bayangan */
+  }
+  .button-container {
+    display: flex;
+    justify-content: center; /* Tombol akan diletakkan di tengah secara horizontal */
+    margin-top: 20px; /* Menambahkan jarak antara card dan tombol */
+  }
+  
+  .card label {
+    margin-bottom: 10px; /* Menambahkan ruang antara label dan input */
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .result-container {
+    background-color: #F3EEFB;
+
+    border-radius: 8px;
+  
+    display: flex;
+    flex-direction: column; /* Mengatur orientasi menjadi vertikal */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #7469B6;
+    color: white;
+    border: none;
+    width: 10%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 32px;
+  }
+  
+  button:hover {
+    background-color: #9389cb;
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-family: sans-serif;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #DFCCFB;
+    color: #7469B6;
+  }
+  
+  h3 {
+    margin-top: 0;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0;
+  }
+  
+  h3::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid black;
+    margin-top: 10px;
+  }
+
+  select{
+    background-color: #7469B6;
+    border-radius: 10px;
+    width: 80px;
+    margin-left: 20px;
+    color: white;
+    font-family: sans-serif;
+    padding: 5px;
+    border-color: #7469B6;
+  }
+
+
+  /* Tata letak untuk model iPhone SE */
+@media only screen and (max-width: 320px) {
+  .card {
+    width: 95%;
+    margin: 10px auto;
+  }
+}
+
+/* Tata letak untuk model iPhone 11 Pro */
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  .card {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* Tata letak untuk model Samsung Galaxy S20 */
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+
+  .header{
+    width: 30%;
+  }
+h1{
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  
+}
+
+  .container{
+    padding: 0;
+  }
+  .content-container {
+    display: flex;
+    justify-content: center; /* Center the card horizontally */
+    align-items: center; /* Center the card vertically */
+   padding-right: 50px;
+    flex-direction: column; /* Stack the cards vertically */
+  }
+  
+  .card {
+    background-color: #F3EEFB;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px ; /* Add margin between each card */
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-direction: column; /* Mengatur orientasi menjadi vertikal */
+    box-shadow: 0px 2px 4px 0px #7469B6; /* Menambahkan bayangan */
+  }
+
+  button{
+    margin-bottom: 20px;
+  }
+}
+
+ 
+
+
+/* Tata letak untuk perangkat dengan lebar layar lebih besar dari 414px */
+@  .header{
+  width: 30%;
+}
+h1{
+font-size: 20px;
+width: 100%;
+text-align: center;
+
+}
+
+.container{
+  padding: 0;
+}
+.content-container {
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+  align-items: center; /* Center the card vertically */
+ padding-right: 60px;
+  flex-direction: column; /* Stack the cards vertically */
+}
+
+.card {
+  background-color: #F3EEFB;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px ; /* Add margin between each card */
+  width: 100%;
+  display: flex;
+  height: auto;
+  flex-direction: column; /* Mengatur orientasi menjadi vertikal */
+  box-shadow: 0px 2px 4px 0px #7469B6; /* Menambahkan bayangan */
+}
+
+button{
+  margin-bottom: 20px;
+  width: 50%;
+  margin-left: 25px;
+}
+
