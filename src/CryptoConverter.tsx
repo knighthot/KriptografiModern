@@ -7,15 +7,15 @@ const CryptoSystem = () => {
   const [ciphertext, setCiphertext] = useState('');
   const [groupSize, setGroupSize] = useState(3);
 
-  const handlePlaintextChange = (e) => {
+  const handlePlaintextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPlaintext(e.target.value);
   };
 
-  const handlechipertextChange = (e) => {
+  const handleCiphertextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCiphertext(e.target.value);
   };
 
-  const handleKeyChange = (e) => {
+  const handleKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKey(e.target.value);
   };
 
@@ -36,23 +36,24 @@ const CryptoSystem = () => {
   };
 
   const decrypt = () => {
-    // Konversi chiperteks dan kunci ke bentuk biner
-    const ciphertextBinary = ciphertext;
-    const keyBinary = key;
-  
-    // Lakukan operasi XOR bit per bit antara chiperteks dan kunci
-    let result = '';
-    for (let i = 0; i < ciphertextBinary.length; i++) {
-      // Lakukan XOR bit per bit antara karakter chiperteks dan kunci
-      result += (parseInt(ciphertextBinary[i], 10) ^ parseInt(keyBinary[i % keyBinary.length], 10)).toString();
-    }
-  
-    // Tampilkan hasil ke plaintext
-    setPlaintext(result);
+    // Decryption logic
+     // Konversi chiperteks dan kunci ke bentuk biner
+     const ciphertextBinary = ciphertext;
+     const keyBinary = key;
+   
+     // Lakukan operasi XOR bit per bit antara chiperteks dan kunci
+     let result = '';
+     for (let i = 0; i < ciphertextBinary.length; i++) {
+       // Lakukan XOR bit per bit antara karakter chiperteks dan kunci
+       result += (parseInt(ciphertextBinary[i], 10) ^ parseInt(keyBinary[i % keyBinary.length], 10)).toString();
+     }
+   
+     // Tampilkan hasil ke plaintext
+     setPlaintext(result);
   };
-  
 
-  const binaryToGroups = (binary) => {
+  const binaryToGroups = (binary: string) => {
+    // Binary to groups logic
     const groups = [];
     for (let i = 0; i < binary.length; i += groupSize) {
       groups.push(binary.slice(i, i + groupSize));
@@ -60,16 +61,18 @@ const CryptoSystem = () => {
     return groups;
   };
 
-  const binaryToDecimal = (binary) => {
+  const binaryToDecimal = (binary: string) => {
     return parseInt(binary, 2);
   };
 
-  const binaryToHex = (binary) => {
+  const binaryToHex = (binary: string) => {
+    // Binary to hexadecimal logic
     return parseInt(binary, 2).toString(16);
   };
 
   const renderResult = () => {
-    const groupedCiphertext = binaryToGroups(ciphertext, groupSize);
+    const groupedCiphertext = binaryToGroups(ciphertext);
+
   
     // Menyiapkan variabel untuk menyimpan hasil yang akan ditampilkan
     let renderedCiphertext = '';
@@ -107,6 +110,7 @@ const CryptoSystem = () => {
     );
   };
 
+
   return (
     <div className="container">
       <div className="content-container">
@@ -138,7 +142,7 @@ const CryptoSystem = () => {
         <div className="left-column">
           <div className="card">
             <label>Ciphertext (Binary):</label>
-            <input type="text" value={ciphertext} onChange={handlechipertextChange} />
+            <input type="text" value={ciphertext} onChange={handleCiphertextChange} />
             <label>Key (Binary):</label>
             <input type="text" value={key} onChange={handleKeyChange} />
             <br />
@@ -152,7 +156,6 @@ const CryptoSystem = () => {
         </div>
       </div>
       <div className="button-container">
-        
         <button onClick={decrypt}>Decrypt</button>
       </div>
     </div>

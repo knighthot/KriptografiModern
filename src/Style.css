@@ -142,6 +142,7 @@ h1{
   }
   .content-container {
     display: flex;
+   
     justify-content: center; /* Center the card horizontally */
     align-items: center; /* Center the card vertically */
    padding-right: 50px;
@@ -169,7 +170,8 @@ h1{
 
 
 /* Tata letak untuk perangkat dengan lebar layar lebih besar dari 414px */
-@  .header{
+@media only screen and (max-width: 415px) { 
+ .header{
   width: 30%;
 }
 h1{
@@ -184,9 +186,10 @@ text-align: center;
 }
 .content-container {
   display: flex;
+
   justify-content: center; /* Center the card horizontally */
   align-items: center; /* Center the card vertically */
- padding-right: 60px;
+ padding-right: 50px;
   flex-direction: column; /* Stack the cards vertically */
 }
 
@@ -205,6 +208,7 @@ text-align: center;
 button{
   margin-bottom: 20px;
   width: 50%;
-  margin-left: 25px;
+  margin-left: 10px;
 }
 
+}
